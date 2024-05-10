@@ -6,11 +6,15 @@ import EmptyCartView from '../EmptyCartView'
 
 import './index.css'
 
-const Cart = () => (
+const Cart = (props) => (
   <CartContext.Consumer>
     {value => {
       const {cartList} = value
       const showEmptyView = cartList.length === 0
+      const onClickCheckout=()=>{
+        const {history}=props;
+        history.replace('/checkout')
+      }
       return (
         <>
           <Header />
@@ -21,6 +25,7 @@ const Cart = () => (
               <div className="cart-content-container">
                 <h1 className="cart-heading">My Cart</h1>
                 <CartListView />
+                <button type="submit" className='checkout-btn' onClick={onClickCheckout}>Checkout</button>
               </div>
             )}
           </div>

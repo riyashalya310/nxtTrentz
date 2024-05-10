@@ -10,6 +10,7 @@ import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CartContext from "./components/context/CartContext";
 import "./App.css";
+import Checkout from "./components/checkout";
 
 class App extends Component {
   state = {
@@ -46,6 +47,7 @@ class App extends Component {
               component={ProductItemDetails}
             />
             <ProtectedRoute exact path="/cart" component={Cart} />
+            <ProtectedRoute exact path="/checkout" component={Checkout} />
             <Route path="/not-found" component={NotFound} />
             <Redirect to="not-found" />
             </Switch>
