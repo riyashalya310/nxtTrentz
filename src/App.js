@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BrowserRouter, Switch,Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import LoginForm from "./components/LoginForm";
 import Home from "./components/Home";
@@ -23,7 +23,11 @@ class App extends Component {
     }));
   };
 
-  deleteCartItem = () => {};
+  deleteCartItem = (product) => {
+    this.setState((prevState) => ({
+      cartList: [prevState.cartList.filter((item) => item.id !== product)],
+    }));
+  };
 
   render() {
     const { cartList } = this.state;
@@ -50,9 +54,9 @@ class App extends Component {
             <ProtectedRoute exact path="/checkout" component={Checkout} />
             <Route path="/not-found" component={NotFound} />
             <Redirect to="not-found" />
-            </Switch>
+          </Switch>
         </CartContext.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
     );
   }
 }

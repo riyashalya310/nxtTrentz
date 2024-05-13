@@ -1,3 +1,6 @@
+*{
+    font-family: 'Roboto';
+}
 .place-order-btn {
     font-family: 'Roboto';
     font-weight: 600;
@@ -11,4 +14,49 @@
     cursor: pointer;
     outline: none;
     width: 100px;
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  .inner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .checkout-heading{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .input-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .horizontal-input{
+    display: flex;
+    flex-direction: row;
+  }
+  th{
+    margin-right: 2px;
+  }
+  td{
+    margin-right: 10px;
+  }
+  .vertical-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .your-order-heading{
+    align-self: center;
   }
